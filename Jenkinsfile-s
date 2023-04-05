@@ -1,10 +1,14 @@
 node('workstation') {
+      try{
+        stage("one") {
+              echo "one"
+           }
 
-    stage("one") {
-          echo "one"
-       }
+        stage("two") {
+               echo "two"
+        }
+     } catch(e) {
+         echo 'this will only run if failed'
+     }
 
-    stage("two") {
-           echo "two"
-    }
- }
+}

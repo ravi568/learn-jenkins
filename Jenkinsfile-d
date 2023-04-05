@@ -1,23 +1,24 @@
 pipeline {
   //agent any
 
-  //node name agent
-
+  // Node Name agent
   agent {
-     node { label1 'workstation' }
+    node { label 'workstation' }
   }
 
- stages {
+  stages {
+
     stage("one") {
       steps {
-          echo "one"
-
-       }
-    }
-    stage("two") {
-      steps {
-           echo "two"
+        echo "one"
       }
     }
- }
+
+    stage('two') {
+      steps {
+        echo "two"
+      }
+    }
+
+  }
 }

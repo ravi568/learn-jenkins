@@ -1,7 +1,7 @@
 pipeline {
-  #agent any
+  //agent any
 
-  #node name agent
+  //node name agent
 
   agent {
      node { label1 'workstation' }

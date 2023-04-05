@@ -23,6 +23,10 @@ parameters {
   stages {
 
     stage("one") {
+    when {
+      environment name: 'PERSON' , value: 'RAVI'
+
+     }
       steps {
         echo "one"
         sh 'env'

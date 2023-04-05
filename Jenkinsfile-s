@@ -1,14 +1,18 @@
 node('workstation') {
-      try{
+    try {
         stage("one") {
-              echo "one"
-           }
-
-        stage("two") {
-               echo "two"
+            echo "one"
+            sh 'exit 1'
         }
-     } catch(e) {
-         echo 'this will only run if failed'
-     }
+
+        stage('two') {
+            echo "two"
+        }
+    } catch (e) {
+        stage('Declarative: Post Actions') {
+            echo 'This will run only if failed'
+        }
+
+    }
 
 }
